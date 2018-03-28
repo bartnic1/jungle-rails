@@ -26,3 +26,8 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+
+## TO DO
+
+* You implemented a sold out badge; should also disallow user from buying item
+* Also, I don't think purchasing an item actually decrements the number of items in the database

@@ -6,9 +6,24 @@ class OrdersController < ApplicationController
 
   def create
     charge = perform_stripe_charge
-    order  = create_order(charge)
+    orderArray = create_order(charge)
+    order = orderArray[0]
+    orderItems = orderArray[1]
+# Want to find the product names that were just ordered, and decrement their quantity by 1
 
     if order.valid?
+      # Update products
+      # For now this will do...but in the future would be nice to find way to load all products at once
+      # into an array, rather than accessing the database for each item!
+      orderItems.each do |itemArray|
+        @product = Product.find(itemArray[0])
+        @product.quantity = @product.quantity - itemArray[1]
+      end
+      order.save
+      # @products = Product.joins("inner join line_items on products.id = line_items.product_id").where("line_items.order_id = #{order.id}")
+      # @products.each do |product|
+      #   product.quantity
+      # end
       empty_cart!
       redirect_to order, notice: 'Your Order has been placed.'
     else
@@ -36,6 +51,7 @@ class OrdersController < ApplicationController
   end
 
   def create_order(stripe_charge)
+    productArray = []
     order = Order.new(
       email: params[:stripeEmail],
       total_cents: cart_total,
@@ -45,15 +61,17 @@ class OrdersController < ApplicationController
       if product = Product.find_by(id: product_id)
         quantity = details['quantity'].to_i
         order.line_items.new(
+          # Does product below automatically select product_id?
           product: product,
           quantity: quantity,
           item_price: product.price,
           total_price: product.price * quantity
         )
+        productArray.push([product, quantity])
       end
     end
     order.save!
-    order
+    [order, productArray]
   end
 
   # returns total in cents not dollars (stripe uses cents as well)
