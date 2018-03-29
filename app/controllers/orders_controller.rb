@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    # puts "LINE ITEMS" @order.line_items[0]
   end
 
   def create
@@ -9,24 +10,26 @@ class OrdersController < ApplicationController
     orderArray = create_order(charge)
     order = orderArray[0]
     orderItems = orderArray[1]
-# Want to find the product names that were just ordered, and decrement their quantity by 1
 
     if order.valid?
-      # Update products
-      # For now this will do...but in the future would be nice to find way to load all products at once
-      # into an array, rather than accessing the database for each item!
 
-      # orderItems.each do |itemArray|
-      #   @product = Product.find(itemArray[0])
-      #   @product.quantity = @product.quantity - itemArray[1]
-      # end
+      orderItems.each do |itemArray|
+        @product = Product.find(itemArray[0])
+        @product.quantity = @product.quantity - itemArray[1]
+      end
 
-      order.save
+      # Alternative to reducing quantity (still needs work)
       # @products = Product.joins("inner join line_items on products.id = line_items.product_id").where("line_items.order_id = #{order.id}")
       # @products.each do |product|
       #   product.quantity
       # end
+
+      cart_old = cart
+
+      order.save
       empty_cart!
+
+      # order path = /orders/:id
       redirect_to order, notice: 'Your Order has been placed.'
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
