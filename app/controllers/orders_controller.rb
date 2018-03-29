@@ -15,10 +15,12 @@ class OrdersController < ApplicationController
       # Update products
       # For now this will do...but in the future would be nice to find way to load all products at once
       # into an array, rather than accessing the database for each item!
-      orderItems.each do |itemArray|
-        @product = Product.find(itemArray[0])
-        @product.quantity = @product.quantity - itemArray[1]
-      end
+
+      # orderItems.each do |itemArray|
+      #   @product = Product.find(itemArray[0])
+      #   @product.quantity = @product.quantity - itemArray[1]
+      # end
+
       order.save
       # @products = Product.joins("inner join line_items on products.id = line_items.product_id").where("line_items.order_id = #{order.id}")
       # @products.each do |product|
