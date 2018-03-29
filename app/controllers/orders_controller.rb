@@ -2,7 +2,11 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    # puts "LINE ITEMS" @order.line_items[0]
+    @currentUser = User.find(session[:user_id])
+    # Can use deliver_now too
+    if(@currentUser)
+      UserMailer.thank_you_email(@currentUser, @order).deliver_later
+    end
   end
 
   def create
@@ -18,17 +22,8 @@ class OrdersController < ApplicationController
         @product.quantity = @product.quantity - itemArray[1]
       end
 
-      # Alternative to reducing quantity (still needs work)
-      # @products = Product.joins("inner join line_items on products.id = line_items.product_id").where("line_items.order_id = #{order.id}")
-      # @products.each do |product|
-      #   product.quantity
-      # end
-
-      cart_old = cart
-
       order.save
       empty_cart!
-
       # order path = /orders/:id
       redirect_to order, notice: 'Your Order has been placed.'
     else

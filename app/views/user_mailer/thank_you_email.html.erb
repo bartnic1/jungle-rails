@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thank you for your order, <%= @user.first_name %> <%= @user.last_name %></h1>
+    <p>
+      Here is a list of the items you ordered:
+      <% @total = 0 %>
+      <% @order.line_items.each do |line_item| %>
+        <%= line_item.product.name %>
+        <% puts '\n' %>
+        <% @total = @total + line_item.product.quantity * line_item.product.price %>
+      <% end %>
+      With a total price of: <%= @total %>
+
+      Thank you for shopping at Jungle!
+    </p>
+  </body>
+</html>
