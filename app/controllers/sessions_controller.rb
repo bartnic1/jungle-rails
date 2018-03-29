@@ -21,6 +21,4 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
-# For future reference: Why doesn't this also need .permit as with
-# the users controller?
 end
