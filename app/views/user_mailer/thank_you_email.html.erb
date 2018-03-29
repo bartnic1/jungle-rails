@@ -8,14 +8,15 @@
     <p>
       Here is a list of the items you ordered:
       <% @total = 0 %>
+      <ul>
       <% @order.line_items.each do |line_item| %>
-        <%= line_item.product.name %>
-        <% puts '\n' %>
+        <li><%= line_item.product.name %> </li>
         <% @total = @total + line_item.product.quantity * line_item.product.price %>
       <% end %>
-      With a total price of: <%= @total %>
+      </ul>
+      <p>With a total price of: <%= @total %></p>
 
-      Thank you for shopping at Jungle!
+      <h2>Thank you for shopping at Jungle!</h2>
     </p>
   </body>
 </html>
