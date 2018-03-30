@@ -3,10 +3,10 @@
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
 ### The Main Page:
-!["Products listing"](https://github.com/bartnic1/Battleship/blob/master/Battleship.png)
+!["Products listing"](https://github.com/bartnic1/jungle-rails/blob/master/images/Products%20page.png)
 
 ### Product Reviews:
-!["Review page"](https://github.com/bartnic1/Battleship/blob/master/Victory.png)
+!["Review page"](https://github.com/bartnic1/jungle-rails/blob/master/images/Product%20review.png)
 
 ## Setup
 
