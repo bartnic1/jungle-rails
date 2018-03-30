@@ -22,8 +22,18 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
-          <h3>Reviews</h3>
+          <h3 class="review-title">Reviews</h3>
+          <table class="table table-bordered review-title">
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Feedback</th>
+              <th>Rating</th>
+            </tr>
+          </thead>
+          <tbody>
           <%= render @reviews %>
+          </tbody>
         </dl>
       </div>
     </div>

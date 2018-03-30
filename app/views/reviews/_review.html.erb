@@ -1,7 +1,18 @@
-<dt> User </dt>
-<dd><%= review.user.first_name %> <%= review.user.last_name %></dd>
-<dt> Feedback </dt>
-<dd><%= review.description %></dd>
-<dt> Rating </dt>
-<dd><%= review.rating %></dd>
-</br>
+<tr>
+  <td><%= review.user.first_name %> <%= review.user.last_name %></td>
+  <td><%= review.description %></td>
+  <td>
+    <% if review.rating > 0 && review.rating < 5 %>
+    <% 1.upto(review.rating).each do %>
+      &starf;
+    <% end %>
+    <% 1.upto(5 - review.rating).each do %>
+      &star;
+    <% end %>
+    <% else %>
+    <% 1.upto(5).each do %>
+      &star;
+    <% end %>
+    <% end %>
+  </td>
+<tr>
