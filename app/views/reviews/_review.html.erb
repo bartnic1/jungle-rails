@@ -2,7 +2,7 @@
   <td><%= review.user.first_name %> <%= review.user.last_name %></td>
   <td><%= review.description %></td>
   <td>
-    <% if review.rating > 0 && review.rating < 5 %>
+    <% if review.rating >= 0 && review.rating <= 5 %>
     <% 1.upto(review.rating).each do %>
       &starf;
     <% end %>
