@@ -22,6 +22,7 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
+          <% if @currentUser %>
           <h3 class="product-title-shift">New Review</h3>
           <div class='product-title-shift'>
             <%= form_for :review, as: :post, url: product_reviews_path(@product) do |f| %>
@@ -37,6 +38,7 @@
               <%= f.submit "Submit" %>
             <% end %>
           </div>
+          <% end %>
           <h3 class="product-title-shift">Reviews</h3>
           <table class="table table-bordered product-title-shift">
           <thead>
@@ -44,6 +46,9 @@
               <th>User</th>
               <th>Feedback</th>
               <th>Rating</th>
+              <% if @currentUser %>
+              <th>Delete</th>
+              <% end %>
             </tr>
           </thead>
           <tbody>
