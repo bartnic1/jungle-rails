@@ -132,6 +132,20 @@ p12 = cat3.products.create!({
   price: 2_483.75
 })
 
+u1 = User.create!({
+  first_name: "Wilfred",
+  last_name: "Farraway",
+  email: "WFarraway@gmail.com",
+  password_digest: "Pass1"
+})
+
+u2 = User.create!({
+  first_name: "Allison",
+  last_name: "Wright",
+  email: "AWright@gmail.com",
+  password_digest: "Pass2"
+})
+
 p1.reviews.create!({
   user_id: 1,
   description: "This is a classy shirt",
@@ -142,6 +156,12 @@ p12.reviews.create!({
   user_id: 1,
   description: "Its an okay bookshelf",
   rating: 3
+})
+
+p12.reviews.create!({
+  user_id: 2,
+  description: "I love the colour!",
+  rating: 4
 })
 
 p11.reviews.create!({
