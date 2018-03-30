@@ -2,6 +2,11 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+### The Main Page:
+!["Products listing"](https://github.com/bartnic1/Battleship/blob/master/Battleship.png)
+
+### Product Reviews:
+!["Review page"](https://github.com/bartnic1/Battleship/blob/master/Victory.png)
 
 ## Setup
 
@@ -26,8 +31,3 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
-
-## TO DO
-
-* You implemented a sold out badge; should also disallow user from buying item
-* Also, I don't think purchasing an item actually decrements the number of items in the database
