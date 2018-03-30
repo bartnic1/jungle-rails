@@ -35,7 +35,7 @@ puts "Re-creating Products ..."
 
 Product.destroy_all
 
-cat1.products.create!({
+p1 = cat1.products.create!({
   name:  'Men\'s Classy shirt',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel1.jpg'),
@@ -108,7 +108,7 @@ cat2.products.create!({
   price: 2_026.29
 })
 
-cat3.products.create!({
+p10 = cat3.products.create!({
   name:  'Optimal Sleeping Bed',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('furniture1.jpg'),
@@ -116,7 +116,7 @@ cat3.products.create!({
   price: 3_052.00
 })
 
-cat3.products.create!({
+p11 = cat3.products.create!({
   name:  'Electric Chair',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('furniture2.jpg'),
@@ -124,7 +124,7 @@ cat3.products.create!({
   price: 987.65
 })
 
-cat3.products.create!({
+p12 = cat3.products.create!({
   name:  'Red Bookshelf',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('furniture3.jpg'),
@@ -132,5 +132,28 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+p1.reviews.create!({
+  user_id: 1,
+  description: "This is a classy shirt",
+  rating: 4
+})
+
+p12.reviews.create!({
+  user_id: 1,
+  description: "Its an okay bookshelf",
+  rating: 3
+})
+
+p11.reviews.create!({
+  user_id: 1,
+  description: "It vibrates!",
+  rating: 5
+})
+
+p10.reviews.create!({
+  user_id: 1,
+  description: "Not at all comfortable",
+  rating: 1
+})
 
 puts "DONE!"
