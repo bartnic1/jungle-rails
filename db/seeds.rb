@@ -136,14 +136,16 @@ u1 = User.create!({
   first_name: "Wilfred",
   last_name: "Farraway",
   email: "WFarraway@gmail.com",
-  password_digest: "Pass1"
+  password: "pass1",
+  password_confirmation: "pass1"
 })
 
 u2 = User.create!({
   first_name: "Allison",
   last_name: "Wright",
   email: "AWright@gmail.com",
-  password_digest: "Pass2"
+  password: "pass2",
+  password_confirmation: "pass2"
 })
 
 p1.reviews.create!({
