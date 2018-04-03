@@ -1,6 +1,6 @@
 <tr>
   <td>
-    <%= image_tag product.image.tiny %>
+    <%= cl_image_tag(product.image, :width=>115, :height=>115) %>
   </td>
   <td>
     <h4><%= product.name %></h4>

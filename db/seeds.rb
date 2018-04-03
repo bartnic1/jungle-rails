@@ -38,9 +38,6 @@ Product.destroy_all
 p1 = cat1.products.create!({
   name:  'Men\'s Classy shirt',
   description: Faker::Hipster.paragraph(4),
-  # image: 'https://res.cloudinary.com/chronosphere111/image/upload/v1522716307/apparel1.jpg',
-  # image: '#<File:./db/seed_assets/apparel1.jpg>',
-  # image: open_asset('apparel1.jpg'),
   image: 'https://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg',
   # image: open_asset('apparel1.jpg'),
   quantity: 10,

@@ -1,8 +1,7 @@
 <article class="product">
   <header>
     <%= link_to product do %>
-    <!-- Used to have .thumb at the end -->
-      <%= image_tag product.image, alt: product.name %>
+      <%= cl_image_tag(product.image) %>
       <h4><%= product.name %></h4>
     <% end %>
   </header>

@@ -37,6 +37,7 @@ gem 'stripe'
 gem 'faker'
 
 gem 'carrierwave'
+gem 'cloudinary'
 # Temporarily removed cloudinary gem - may add back in later
 
 # Use Capistrano for deployment
