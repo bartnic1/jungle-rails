@@ -2,9 +2,8 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    @currentUser = User.find(session[:user_id])
-    # Can use deliver_now too
-    if(@currentUser)
+    if session[:user_id]
+      @currentUser = User.find(session[:user_id])
       UserMailer.thank_you_email(@currentUser, @order).deliver_later
     end
   end
