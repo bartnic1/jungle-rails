@@ -37,3 +37,4 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 Preface all normal action with "heroku run" to run them on heroku. Example:
 heroku run rake db:migrate
 heroku run rake db:seed
+heroku run rake db:reset
