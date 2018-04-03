@@ -2,7 +2,7 @@
   <header>
     <%= link_to product do %>
     <!-- Used to have .thumb at the end -->
-      <%= image_tag product.image, alt: product.name %>
+      <%= image_tag product.image.thumb, alt: product.name %>
       <h4><%= product.name %></h4>
     <% end %>
   </header>
