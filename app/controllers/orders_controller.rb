@@ -22,7 +22,10 @@ class OrdersController < ApplicationController
 
       orderItems.each do |itemArray|
         @product = Product.find(itemArray[0])
+        puts ":::::#{@product.quantity}:::::"
         @product.quantity = @product.quantity - itemArray[1]
+        puts ":::::#{@product.quantity}:::::"
+        @product.save
       end
 
       order.save
