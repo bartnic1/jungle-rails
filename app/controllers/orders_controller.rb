@@ -4,7 +4,11 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     if session[:user_id]
       @currentUser = User.find(session[:user_id])
-      UserMailer.thank_you_email(@currentUser, @order).deliver_later
+
+    # The usermailer below only works for localserver (though, even then it can't really send an e-mail
+    # from within the vagrant machine. You have to open sent emails using letteropener)
+
+    # UserMailer.thank_you_email(@currentUser, @order).deliver_later
     end
   end
 
