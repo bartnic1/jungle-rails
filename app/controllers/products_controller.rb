@@ -1,3 +1,5 @@
+include CloudinaryHelper
+
 class ProductsController < ApplicationController
 
   def index

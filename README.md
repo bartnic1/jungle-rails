@@ -38,3 +38,8 @@ Preface all normal action with "heroku run" to run them on heroku. Example:
 heroku run rake db:migrate
 heroku run rake db:seed
 heroku run rake db:reset
+
+Update: May need to remove cl_image_tag from image attribute, so as to just get the URL. But then, how to render
+an image in an ERB? Could try cl_image_tag.
+
+https://cloudinary.com/documentation/rails_image_manipulation
