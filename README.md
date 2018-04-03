@@ -43,3 +43,11 @@ Update: May need to remove cl_image_tag from image attribute, so as to just get 
 an image in an ERB? Could try cl_image_tag.
 
 https://cloudinary.com/documentation/rails_image_manipulation
+
+## bin/rspec
+
+Note, if you don't want to run all specs, you can specify:
+bin/rspec spec/features
+
+To make the tests more verbose, use -fd flag:
+bin/rspec -fd --or-- bin/rspec spec/features -fd
