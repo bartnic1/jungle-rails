@@ -31,3 +31,9 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+
+## Heroku
+
+Preface all normal action with "heroku run" to run them on heroku. Example:
+heroku run rake db:migrate
+heroku run rake db:seed
