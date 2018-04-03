@@ -51,3 +51,8 @@ bin/rspec spec/features
 
 To make the tests more verbose, use -fd flag:
 bin/rspec -fd --or-- bin/rspec spec/features -fd
+
+## resetting the database
+
+The following command runs all migrations (and hopefully reseeds)
+rake db:migrate:reset
