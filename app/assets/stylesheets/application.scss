@@ -25,3 +25,26 @@ body {
   position: relative;
   left: 80px;
 }
+
+.entry-1, .entry-2, .entry-3, .entry-4, .entry-5 {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.entry-1 {
+  border-color: #f00;
+}
+.entry-2 {
+  border-color: #2f2;
+}
+.entry-3 {
+  border-color: #00f;
+}
+.entry-4 {
+  border-color: #dd0;
+}
+.entry-5 {
+  border-color: #0dd;
+}
