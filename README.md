@@ -32,6 +32,10 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * PostgreSQL 9.x
 * Stripe
 
+## bin/rails generators
+
+Type in "bin/rails g" to see what you can generate
+
 ## Heroku
 
 Preface all normal action with "heroku run" to run them on heroku. Example:
@@ -51,6 +55,12 @@ bin/rspec spec/features
 
 To make the tests more verbose, use -fd flag:
 bin/rspec -fd --or-- bin/rspec spec/features -fd
+
+### bin/rspec generation
+
+bin/rails generate rspec:feature user_login
+bin/rails generate rspec:model order
+
 
 ## resetting the database
 
