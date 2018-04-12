@@ -8,7 +8,13 @@ class OrdersController < ApplicationController
     # The usermailer below only works for localserver (though, even then it can't really send an e-mail
     # from within the vagrant machine. You have to open sent emails using letteropener)
 
-    UserMailer.with(user: @currentUser, order: @order).thank_you_email.deliver_now
+      # NOTE: MUST BE SIGNED IN FOR THIS TO WORK!!
+
+      UserMailer.thank_you_email(@currentUser, @order).deliver_later
+
+      # New format from rails guide:
+      # UserMailer.with(user: @currentUser, order: @order).thank_you_email.deliver_later
+
     end
   end
 

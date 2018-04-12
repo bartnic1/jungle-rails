@@ -15,6 +15,10 @@ Rails.application.configure do
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
+
+  # Changes to try to get gmail working
+
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
@@ -24,6 +28,7 @@ Rails.application.configure do
     password:             'Royale13',
     authentication:       'plain',
     enable_starttls_auto: true }
+
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
