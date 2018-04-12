@@ -5,6 +5,7 @@ class UserMailer < ApplicationMailer
     @order = order
     @user = user
     @url  = 'http://example.com/login'
-    mail(to: @user.email, subject: 'Order #' + @order.id.to_s + ' has been placed. Thank you!')
+    # Formerly, to: @user.email
+    mail(to: 'bartnic1@gmail.com', subject: 'Order #' + @order.id.to_s + ' has been placed. Thank you!')
   end
 end
