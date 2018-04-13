@@ -38,7 +38,9 @@ gem 'faker'
 
 gem 'carrierwave'
 gem 'cloudinary'
-# Temporarily removed cloudinary gem - may add back in later
+
+# For actionmailer, uses heroku's sendgrid API to send e-mails to users (12,000 a month max for free)
+gem 'sendgrid-ruby'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
